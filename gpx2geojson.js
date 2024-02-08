@@ -29,11 +29,6 @@ const GPX2GeoJSON = {
 
   fromDocument: function(document, options) {
     const features = []
-    const json = {
-      "type": "FeatureCollection",
-      "features": features
-    };
-
     for (const n of document.firstChild.childNodes) {
       switch (n.tagName) {
       case "wpt":
@@ -48,7 +43,10 @@ const GPX2GeoJSON = {
       }
     }
 
-    return json;
+    return {
+      "type": "FeatureCollection",
+      "features": features
+    };
   },
 
   _coordFromNode: function(node, options) {
