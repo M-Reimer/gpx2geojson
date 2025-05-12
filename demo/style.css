@@ -141,7 +141,13 @@ section #title .credits.right{float:right}
   #title .credits .left{float:none;display:block}
   #title .credits .right{float:none;display:block}
 }
-@media print, screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
+  nav li.downloads,
+  nav li.title {
+    display:none !important;
+  }
+}
+@media print {
   #header{margin-top:-20px}
   section{margin-top:40px}
   nav{display:none}
