@@ -28,7 +28,7 @@ const GPX2GeoJSON = {
   },
 
   fromDocument: function(document, options) {
-    const features = []
+    const features = [];
     for (const n of document.firstChild.childNodes) {
       switch (n.tagName) {
       case "wpt":
@@ -69,7 +69,7 @@ const GPX2GeoJSON = {
         "coordinates": coords
       },
       "properties": props
-    }
+    };
   },
 
   _wptToPoint: function(node, options) {
@@ -101,7 +101,7 @@ const GPX2GeoJSON = {
 
   _rteToLineString: function(node, options) {
     const coords = [];
-    const props = {}
+    const props = {};
     for (const n of node.childNodes) {
       if (n.tagName == "rtept")
         coords.push(this._coordFromNode(n, options));
